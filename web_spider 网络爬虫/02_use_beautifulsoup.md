@@ -51,6 +51,7 @@
 
 第一点可以参考这里（并不需要使用到XPath路径，但是你要知道怎么去找元素位置）：
 https://blog.csdn.net/weixin_43277055/article/details/85319676
+
 第二点关于BeautifulSoup包，可以先看看官方文档，有助于更加全面地了解它的功能：
 https://beautifulsoup.readthedocs.io/zh_CN/v4.4.0/
 
