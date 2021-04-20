@@ -87,15 +87,22 @@ body = soup.body
 </html>
 ```
 在上面的html例子中，想要找到```hello ben```这个元素，可以这么写：
-
-```body.find('div', id='ben').string```
+```info = body.find('div', id='ben').string```
 
 找到```a```这个元素，这样写：
-```body.find('li').find('p', class_="a").string```
+```info = body.find('li').find('p', class_="a").string```
 
 想要找到所有的```<p>```中包含的信息，这么写：
-
-```body.find('li').find_all('p').string```
+```info_list = body.find('li').find_all('p')```
 - 注意find()的返回结果是一个标签对象，find_all()的返回结果是由标签对象组成的列表
 - 想要获得标签的字符串形式内容，需要使用标签的string属性
+
+最后所得的```info```是目标内容的字符串，```info_list```是标签的列表
+```
+print(info)
+
+for info in info_list:
+  print(info.string)
+```
+
 
