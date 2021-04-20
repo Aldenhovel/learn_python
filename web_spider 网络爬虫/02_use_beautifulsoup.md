@@ -21,9 +21,13 @@
   <body>
     <div id="joe">hello joe</div>
     <div id="ben">hello ben</div>
+    <li>
+      <p class="a">a</p>
+      <p class="b">b</p>
+      <p class="c">c</p>
+    </li>
   </body>
 </html>
-
 ```
 如果你想要抓取：
 ```hello joe```
@@ -52,3 +56,42 @@ https://blog.csdn.net/weixin_43277055/article/details/85319676
 首先我们导入包（事前要先安装）
 
 ```from bs4 import BeautifulSoup```
+
+然后利用之前得到的response.text初始化一个BeautifulSoup实例，为了简化，我们直接拿取这个html树的body内容（相当于进入了<body>节点）
+
+```
+soup = BeautifulSoup(response.text)
+body = soup.body
+```
+
+你可以想象此时网页源代码已经变成了一棵树，只要按照对应路径进入到分支，就能找到结果。关键的“进入”有以下两个方法：
+- find() 返回进入某一分支后的节点
+- find_all() 返回所有符合要求的分支的节点列表
+除此之外，这两个方法需要带有参数，一个是目标的标签类型，一个是目标的属性值。举个例子：
+
+```
+<html>
+  <body>
+    <div id="joe">hello joe</div>
+    <div id="ben">hello ben</div>
+    <li>
+      <p class="a">a</p>
+      <p class="b">b</p>
+      <p class="c">c</p>
+    </li>
+  </body>
+</html>
+```
+在上面的html例子中，想要找到```hello ben```这个元素，可以这么写：
+
+```body.find('div', id='ben').string```
+
+找到```a```这个元素，这样写：
+```body.find('li').find('p', class_="a").string```
+
+想要找到所有的```<p>```中包含的信息，这么写：
+
+```body.find('li').find_all('p').string```
+- 注意find()的返回结果是一个标签对象，find_all()的返回结果是由标签对象组成的列表
+- 想要获得标签的字符串形式内容，需要使用标签的string属性
+
