@@ -28,7 +28,8 @@ In [2]:
 - BeautifulSoap包
 - pymssql包，与SQL数据库基础
 - xml包，与xml基础
-- re包 与正则表达式基础
+- re包，与正则表达式基础
+- pandas和numpy及数据清洗知识
 - 计算机网络相关知识
 - 加密方法原理
 - javascript与html的相关知识
