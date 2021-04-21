@@ -65,11 +65,13 @@ https://detail.zol.com.cn/cell_phone_index/subcate57_0_list_1_0_1_2_0_30.html
     <tel>10231</tel>
 </person>
 ```
-这是一个xml的树状信息，使用DataFrame存储的结果直接是一张person表格：
+这是一个xml的树状信息，使用pandas.DataFrame存储生成一张person表格：
 |name|age|tel|
 |:---|:---|:---|
 |joe|18|10001|
 |ben|22|10011|
 |jane|26|10231|
+
+
 
 
