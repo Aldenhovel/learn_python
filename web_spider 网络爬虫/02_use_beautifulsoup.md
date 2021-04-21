@@ -95,12 +95,13 @@ body = soup.body
 - 注意find()的返回结果是一个标签对象，find_all()的返回结果是由标签对象组成的列表
 - 想要获得标签的字符串形式内容，需要使用标签的string属性
 
-最后所得的```info```是目标内容的字符串，```info_list```是标签的列表
+最后所得的```info```是目标内容的字符串，```info_list```是标签的列表，都可作为文本输出：
 ```
 print(info)
-
+```
+```
 for info in info_list:
-  print(info.string)
+    print(info.string)
 ```
 
 
